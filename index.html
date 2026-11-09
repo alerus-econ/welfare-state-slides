@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welfare: un patto tra generazioni (versione breve)</title>
+<link rel="stylesheet" href="vendor/reveal-reset.min.css">
+<link rel="stylesheet" href="vendor/reveal.min.css">
+<link rel="stylesheet" href="vendor/reveal-white.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Versione italiana BREVE, ricavata da index_it.html: testi semplificati e meno slide.
+     Usa gli stessi js/app.js e js/reform_viz.js: gli id degli elementi interattivi devono restare identici. -->
+<div class="reveal"><div class="slides">
+
+<!-- ============================ AGGANCIO ============================ -->
+<section class="act-title">
+  <h1>Welfare State:<br>Un Patto Intergenerazionale</h1>
+  <p class="caption">Alessia Russo · Università di Padova</p>
+  <aside class="notes">Benvenuti. Oggi guardiamo alle pensioni come a un patto tra generazioni, che riguarda anche voi.</aside>
+</section>
+
+<section>
+  <h2>Pensioni in numeri</h2>
+  <div class="cols center" style="margin-top:60px">
+    <div><div class="big-number old">15,3%</div><p>spesa per pensioni / PIL (2024)</p></div>
+    <div><div class="big-number">16,4 mln</div><p>pensionati<br><span class="caption">2025</span></p></div>
+    <div><div class="big-number young">1,7</div><p>lavoratori per ogni pensionato<br><span class="caption">27,2 mln di lavoratori assicurati / 16,4 mln di pensionati, 2025</span></p></div>
+  </div>
+  <p class="center" style="margin-top:40px">Chi paga? <strong>Voi.</strong> E un giorno qualcuno pagherà per voi.</p>
+  <div class="src">Fonti: RGS, Rapporto n. 27 (2026); INPS, XXV Rapporto Annuale (2026), Relazione del Presidente.</div>
+</section>
+
+<section>
+  <h2>Il debito nascosto: le promesse pensionistiche già fatte</h2>
+  <div class="cols">
+    <div style="flex:1.6"><div class="chart-box short"><canvas id="ch-liab"></canvas></div></div>
+    <div style="flex:1;font-size:0.65em">
+      <p>Diritti pensionistici maturati: ciò che è <em>già stato promesso</em> ai lavoratori e ai pensionati di oggi.</p>
+      <div class="big-number old" style="font-size:2.4em">438%</div><p>del PIL in Italia (2021)</p>
+      <div class="big-number" style="font-size:2.4em">137%</div><p>debito pubblico ufficiale (2025)</p>
+      <p class="caption">Non è debito in senso giuridico, ma mostra quanta parte del futuro è già impegnata.</p>
+    </div>
+  </div>
+  <div class="src">Fonte: Eurostat, nasa_10_pens1 (Tavola supplementare 29, tutti gli schemi pensionistici di assicurazione sociale); gov_10dd_edpt1.</div>
+</section>
+
+<section>
+  <h2>A cosa serve la pensione?</h2>
+  <div class="cols">
+    <div class="card"><h3>Ci protegge da</h3>
+      <ul><li><strong>Vecchiaia</strong>: vivere più a lungo dei propri risparmi</li>
+      <li><strong>Invalidità</strong>: non poter più lavorare</li>
+      <li><strong>Morte</strong> di chi porta il reddito in famiglia</li></ul></div>
+    <div class="card"><h3>Serve a</h3>
+      <ul><li><strong>Distribuire il reddito</strong> lungo tutta la vita</li>
+      <li><strong>Evitare la povertà</strong> da anziani</li>
+      <li><strong>Redistribuire</strong> tra ricchi e poveri, e tra generazioni</li></ul></div>
+  </div>
+  <p class="caption" style="margin-top:20px">Da soli risparmiamo poco per la vecchiaia: per questo lo Stato lo rende <em>obbligatorio</em>.</p>
+</section>
+
+<section>
+  <h2>Due modi per pagare le pensioni</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;font-size:0.84em">
+    <div class="card fragment" data-fragment-index="0" style="grid-column:span 2"><h3 style="font-size:1.25em;margin-bottom:6px">A ripartizione</h3>
+      <p style="margin:0 0 8px">I <strong>lavoratori di oggi</strong> pagano le pensioni degli <strong>anziani di oggi</strong>. Rende quanto crescono <strong>lavoratori e salari</strong>.</p>
+      <p style="margin:0"><strong>Esempi:</strong> Italia, Germania, Spagna.</p></div>
+    <div class="card fragment" data-fragment-index="3" style="grid-row:span 2"><h3 style="font-size:1.25em;margin-bottom:6px">A capitalizzazione</h3>
+      <p style="margin:0 0 8px">Ognuno mette da parte i propri soldi in un <strong>fondo</strong> che li investe.</p>
+      <p style="margin:0 0 8px">Rende quanto rendono i <strong>mercati finanziari</strong>. Sono i fondi pensione.</p>
+      <p style="margin:0"><strong>Esempi:</strong> Australia, Paesi Bassi, Danimarca, Cile.</p></div>
+    <div class="card fragment" data-fragment-index="1"><h3 style="font-size:1.1em;margin-bottom:6px"><span class="old-t">Retributivo</span></h3>
+      <p style="margin:0 0 8px">Pensione legata agli <strong>stipendi</strong>, spesso degli ultimi anni.</p>
+      <p style="margin:0"><strong>Esempi:</strong> Spagna, Italia prima del 1996.</p></div>
+    <div class="card fragment" data-fragment-index="2"><h3 style="font-size:1.1em;margin-bottom:6px"><span class="young-t">Contributivo</span></h3>
+      <p style="margin:0 0 8px">Pensione legata a <strong>quanto si è versato</strong> e alla speranza di vita.</p>
+      <p style="margin:0"><strong>Esempi:</strong> Italia dal 1996, Svezia, Polonia, Lettonia.</p></div>
+  </div>
+  <p class="caption fragment" data-fragment-index="4" style="margin-top:14px">In molti paesi i due sistemi convivono.</p>
+  <div class="src">Fonti: OCSE, Pensions at a Glance 2019 e 2023, dati sui fondi pensione 2021; L. 335/1995; letteratura sui sistemi contributivi nozionali; MDPI Sustainability 13(4), 2021 (Spagna); legge cilena 21.735 (2025).</div>
+</section>
+
+<!-- ============================ 01 - TEORIA ============================ -->
+<section class="act-title"><div class="num">01</div><h2>Un contratto tra generazioni</h2><p>Quando conviene a tutti?</p></section>
+
+<section>
+  <h2>Il gioco delle caramelle (Samuelson, 1958)</h2>
+  <p class="center" style="font-size:0.82em;margin:0">Ogni giovane dà <strong>1 caramella</strong> agli anziani. Da anziano riceverà le caramelle dei giovani dopo di lui.</p>
+  <p class="center" style="font-size:0.82em;margin:8px 0 0">Rendimento della pensione = <strong>(1+n)(1+g) − 1</strong></p>
+  <p class="center" style="font-size:0.66em;margin:2px 0 0"><strong>1+n = figli per donna / 2</strong> (con 2 figli n = 0: popolazione costante) · g = crescita della produttività</p>
+  <div class="chain chain-big chain-tfr fragment" id="chain"></div>
+  <div class="chain-ctrls">
+    <div class="ctrl"><label>Figli per donna <span class="val" id="cc-n-v"></span></label><input type="range" id="cc-n" min="1" max="4" step="0.1" value="3"></div>
+    <div class="ctrl"><label>Crescita della produttività (più caramelle per lavoratore) <span class="val" id="cc-g-v"></span></label><input type="range" id="cc-g" min="0" max="1" step="0.1" value="0"></div>
+  </div>
+  <div class="center"><button id="cc-boom">Scenario: baby boom → poche nascite</button><button id="cc-reset">Ripristina</button></div>
+  <aside class="notes">La Gen 0 è una coppia: ogni pallino è una persona, i pallini più piccoli sono frazioni di persona. Crescita per generazione: 1+n = figli per donna / 2. Nella realtà la soglia è circa 2,1, perché non tutti arrivano all'età adulta. Versione in aula: mettete in fila 5 gruppi di studenti, prima sempre più grandi, poi più piccoli. Ogni giovane passa 1 caramella al gruppo precedente. Chiedete agli ultimi gruppi come si sentono.</aside>
+</section>
+
+<section>
+  <h2>Quando conviene la ripartizione?</h2>
+  <div class="cols">
+    <div style="flex:0.8">
+      <div class="formula">Conviene se &nbsp; n + g &gt; r</div>
+      <p style="font-size:0.55em;margin-top:8px">n = crescita della popolazione · g = crescita della produttività · r = tasso di interesse</p>
+      <div class="ctrl"><label>n: popolazione (%/anno) <span class="val" id="ac-n-v"></span></label><input type="range" id="ac-n" min="-1.5" max="3" step="0.1" value="1"></div>
+      <div class="ctrl"><label>g: produttività (%/anno) <span class="val" id="ac-g-v"></span></label><input type="range" id="ac-g" min="-0.5" max="5" step="0.1" value="3"></div>
+      <div class="ctrl"><label>r: interesse reale (%/anno) <span class="val" id="ac-r-v"></span></label><input type="range" id="ac-r" min="-1" max="6" step="0.1" value="2"></div>
+      <button data-ac="1965">Italia ~1965</button><button data-ac="2050">Italia ~2050</button>
+      <div id="ac-verdict" style="font-size:0.7em;margin-top:10px;font-weight:700"></div>
+    </div>
+    <div><div class="chart-box short"><canvas id="ch-aaron"></canvas></div></div>
+  </div>
+  <p class="caption">Condizione di Aaron (1966). Grafico: quanto valgono in pensione 1 € versato ogni anno per 40 anni, con i due sistemi.</p>
+  <aside class="notes">Dal numero di figli a n: n ≈ ln(TFR / 2,1) / 30 all'anno, dove 30 anni è la durata di una generazione. TFR 3 → +1,2%; TFR 2,1 → 0; Italia 1,18 → −1,9%. È la n di lungo periodo, a TFR costante e senza migrazioni.</aside>
+</section>
+
+<section>
+  <h2>Pensioni e scuola: due metà dello stesso patto</h2>
+  <p style="font-size:0.95em;margin-top:30px">I genitori pagano la <strong>scuola</strong> dei figli. I figli, da adulti, pagano la <strong>pensione</strong> dei genitori. L'istruzione fa crescere la produttività (<strong>g</strong>), e un g più alto paga le pensioni.</p>
+  <div class="card" style="font-size:1em;margin-top:30px">
+    <h3 style="font-size:1.15em">Scuola e pensioni sono cresciute insieme</h3>
+    <ul>
+      <li><strong>Regno Unito:</strong> Education Act 1944 → National Insurance Act 1946</li>
+      <li><strong>Italia:</strong> scuola media unica 1962 → riforma pensionistica Brodolini 1969</li>
+      <li><strong>USA:</strong> Social Security 1935 → GI Bill 1944, università di massa</li>
+    </ul>
+  </div>
+  <p class="caption" style="margin-top:24px;font-size:0.8em">Becker e Murphy (1988); Boldrin e Montes (2005); Lancia e Russo (2016).</p>
+  <aside class="notes">Se si taglia la scuola e si mantengono le pensioni, il patto si rompe dall'altro lato.</aside>
+</section>
+
+<!-- ============================ 02 - CONDIZIONI CHE CAMBIANO ============================ -->
+<section class="act-title"><div class="num">02</div><h2>Il mondo è cambiato</h2><p>Meno nascite · vite più lunghe · poca crescita</p></section>
+
+<section>
+  <h2>La piramide italiana, 1950 → 2100</h2>
+  <div class="cols">
+    <div style="flex:2"><div class="chart-box"><canvas id="ch-pyramid"></canvas></div></div>
+    <div style="flex:0.8">
+      <div class="big-number" id="pyr-year" style="font-size:2.6em">2025</div>
+      <input type="range" id="pyr-slider" min="1950" max="2100" step="5" value="2025">
+      <button id="pyr-play">▶ Avvia</button><button id="pyr-hide">Nascondi anno</button>
+      <p style="font-size:0.6em"><span class="young-t">■</span> uomini &nbsp; <span class="old-t">■</span> donne<br>(migliaia)</p>
+    </div>
+  </div>
+  <div class="src">Fonte: Nazioni Unite, World Population Prospects 2024, variante media.</div>
+</section>
+
+<section>
+  <h2>Sempre meno figli per donna</h2>
+  <div class="chart-box"><canvas id="ch-tfr"></canvas></div>
+  <p class="caption">Servono 2,1 figli per donna per mantenere la popolazione stabile. In Italia sono <strong>1,18</strong> (2024).</p>
+  <div class="src">Fonti: UN WPP 2024; ISTAT.</div>
+</section>
+
+<section>
+  <h2>Sempre più anziani per ogni lavoratore</h2>
+  <div class="chart-box"><canvas id="ch-oadr"></canvas></div>
+  <p class="caption">Over 65 ogni 100 persone in età da lavoro (15–64 anni). Italia: <strong>38 oggi → 64 nel 2050</strong>.</p>
+  <div class="src">Fonti: UN WPP 2024; RGS Rapporto n. 27 (2026).</div>
+</section>
+
+<section>
+  <h2>Italia: il tasso di crescita del PIL (n + g) è crollato</h2>
+  <div class="chart-box short"><canvas id="ch-growth"></canvas></div>
+  <p class="caption">Crescita del PIL reale (≈ n + g) per decennio, a confronto con il tasso di interesse reale (titoli di Stato a lungo termine al netto dell'inflazione). Il 2021–24 riflette il rimbalzo post-COVID. La RGS prevede una crescita reale media di appena <strong>0,5% annuo nel 2026–2070</strong>.</p>
+  <div class="src">Fonti: Banca Mondiale WDI (NY.GDP.MKTP.KD.ZG, NY.GDP.DEFL.KD.ZG); Eurostat (irt_lt_mcby_a); RGS Rapporto n. 27 (2026).</div>
+</section>
+
+<!-- ============================ 03 - ITALIA ============================ -->
+<section class="act-title"><div class="num">03</div><h2>Le pensioni in Italia</h2><p>Riforme · regole · cosa significa per voi</p></section>
+
+<section>
+  <h2>Perché le riforme sono così difficili?</h2>
+  <div class="cols" style="margin-top:30px">
+    <div class="card" style="font-size:1em"><h3 style="font-size:1.2em">Il problema</h3><ul>
+      <li>Chi perde lo sa <strong>subito</strong> e vota.</li>
+      <li>Chi guadagna è <strong>giovane o non ancora nato</strong>, e non vota.</li>
+      <li>L'elettore tipico in Italia ha più di 50 anni.</li></ul></div>
+    <div class="card" style="font-size:1em"><h3 style="font-size:1.2em">Quindi le riforme sono…</h3><ul>
+      <li><strong>Lente</strong>: si applicano soprattutto ai giovani</li>
+      <li><strong>Altalenanti</strong>: riforme e controriforme (Quota 100…)</li>
+      <li><strong>Automatiche</strong>, quando possibile: l'età sale con la speranza di vita</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2 style="margin-bottom:0.25em">Chi ha riformato, e quando? 23 paesi, 1970–2023</h2>
+  <div data-viz="reform-map" class="rm-flip"></div>
+  <div class="src">Fonte: Romp, W. (2024), Netspar DP 07/2024-022; mappa: Natural Earth. Premete ▶, poi cliccate su un paese.</div>
+  <aside class="notes">Premete play: negli anni '70 domina il verde-azzurro (pensioni più generose), dagli anni '90 l'arancione (tagli). Cliccate sull'Italia.</aside>
+</section>
+
+<section>
+  <h2>1973: le promesse del governo Rumor</h2>
+  <div class="cols" style="align-items:center">
+    <div style="flex:1.35"><img src="img/governo_rumor.jpg" alt="Ritaglio di giornale del 29 agosto 1973: «Rumor presiede un vertice dei ministri finanziari. Le nuove pensioni»" style="width:100%;border:1px solid var(--line);border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.15)"></div>
+    <div style="font-size:0.78em">
+      <p><strong>Roma, 29 agosto 1973.</strong> Il governo Rumor tratta con i sindacati l'aumento di pensioni sociali, pensioni dei dipendenti, indennità di disoccupazione e assegni familiari.</p>
+      <p>Il "problema" è solo capire quanto costano allo Stato e all'INPS: nessuno chiede chi pagherà tra 40 anni.</p>
+      <p>Pochi mesi dopo (DPR 1092/1973) arrivano le <strong>"baby pensioni"</strong>: statali in pensione dopo 19 anni, 6 mesi e 1 giorno; donne sposate con figli dopo 14 anni, 6 mesi e 1 giorno.</p>
+    </div>
+  </div>
+  <div class="src">Fonte: ritaglio di un quotidiano dell'epoca (pagina «Informazione attualità»), 30 agosto 1973.</div>
+  <aside class="notes">Anni di crescita alta e piramide giovane: promettere pensioni generose sembrava gratis. Notate il tono: l'inchiesta serve a "accertare gli oneri", ma la decisione è già presa. Le baby pensioni sono state abolite solo nel 1992 (Amato); alcune sono ancora in pagamento oggi.</aside>
+</section>
+
+<section>
+  <h2>Le principali riforme delle pensioni in Italia</h2>
+  <table style="font-size:0.62em">
+    <tr><th>Anno</th><th>Chi</th><th>Cosa cambia</th></tr>
+    <tr><td style="white-space:nowrap"><strong>1919–52</strong></td><td>Legge 218/1952</td><td>Pensione obbligatoria <strong>a capitalizzazione</strong>; l'<strong>inflazione</strong> del dopoguerra brucia le riserve e dal 1952 si passa alla <strong>ripartizione</strong></td></tr>
+    <tr><td><strong>1969</strong></td><td>Brodolini<br><span class="caption">ministro del Lavoro</span></td><td>Nasce il <span class="old-t">retributivo</span>: pensione fino all'<strong>80% dell'ultimo stipendio</strong>; nasce la pensione sociale</td></tr>
+    <tr><td><strong>1973</strong></td><td>Governo Rumor</td><td><strong>"Baby pensioni"</strong> per i dipendenti pubblici: in pensione con meno di 20 anni di contributi</td></tr>
+    <tr><td><strong>1992</strong></td><td>Amato<br><span class="caption">Presidente del Consiglio</span></td><td>Età da 55/60 a <strong>60/65 anni</strong> (donne/uomini); pensioni rivalutate solo con i prezzi</td></tr>
+    <tr><td><strong>1995</strong></td><td>Dini<br><span class="caption">Presidente del Consiglio</span></td><td>Nasce il <span class="young-t">contributivo</span>, per chi inizia a lavorare dal 1996</td></tr>
+    <tr><td><strong>2004–07</strong></td><td>Maroni → Damiano<br><span class="caption">ministri del Lavoro</span></td><td>Lo <strong>"scalone"</strong> (salto improvviso dell'età), poi sostituito dalle <strong>"quote"</strong> (età + anni di contributi)</td></tr>
+    <tr><td><strong>2010</strong></td><td>Sacconi<br><span class="caption">ministro del Lavoro</span></td><td>Età della pensione <strong>agganciata alla speranza di vita</strong></td></tr>
+    <tr><td><strong>2011</strong></td><td>Fornero<br><span class="caption">ministra del Lavoro, governo Monti</span></td><td><strong>Contributivo per tutti</strong> dal 2012 (pro rata); vecchiaia a 66 anni, poi <strong>67</strong></td></tr>
+    <tr><td><strong>2019–25</strong></td><td>Governi Conte I → Meloni</td><td><strong>Quota 100, 102, 103</strong>: uscite anticipate temporanee (es. 62 anni + 38 di contributi)</td></tr>
+  </table>
+  <aside class="notes">Fate notare il ritmo: espansione negli anni '60–'70, poi dal 1992 tagli quasi ogni pochi anni, con qualche passo indietro (Quota 100). Le riforme prendono il nome a volte dal ministro del Lavoro, a volte dal Presidente del Consiglio.</aside>
+</section>
+
+<section>
+  <h2>Retributivo e Contributivo in Italia</h2>
+  <div class="cols" style="gap:22px">
+    <div class="card" style="font-size:0.85em"><h3 style="font-size:1.15em"><span class="old-t">Retributivo</span> (prima del 1996)</h3>
+      <p><strong>"Avrai una pensione legata al tuo ultimo stipendio."</strong></p><ul>
+      <li>Circa il <strong>2% dell'ultimo stipendio per ogni anno</strong> di lavoro.</li>
+      <li>40 anni di lavoro → circa l'<strong>80%</strong> dello stipendio.</li></ul></div>
+    <div class="card" style="font-size:0.85em"><h3 style="font-size:1.15em"><span class="young-t">Contributivo</span> (dal 1996: <span class="young-t">voi</span>)</h3>
+      <p><strong>"Avrai in base a quanto hai versato."</strong></p><ul>
+      <li>Ogni anno il <strong>33% dello stipendio</strong> va in un salvadanaio virtuale.</li>
+      <li>Il salvadanaio cresce con il PIL.</li>
+      <li><strong>Coefficiente di trasformazione</strong>: pensione annua = salvadanaio finale × coefficiente. Sale con l'età di uscita, scende se si vive più a lungo.</li>
+      <li>Iniziare tardi o avere buchi <strong>abbassa la pensione</strong>.</li></ul></div>
+  </div>
+  <p class="caption" style="margin-top:24px;font-size:0.88em">Oggi si va in pensione a <strong>67 anni</strong> (con almeno 20 anni di contributi), e l'età sale con la speranza di vita: circa <strong>70 anni</strong> per voi.</p>
+  <aside class="notes">In una riga: nel retributivo lo Stato promette l'80% dell'ultimo stipendio; nel contributivo ti dà quello che hai versato, diviso per gli anni che ti restano. I soldi non vengono investiti: è sempre ripartizione.</aside>
+</section>
+
+<section>
+  <h2>A che età in pensione? Chi è nato dopo il 1996</h2>
+  <table style="font-size:0.72em;margin-top:18px">
+    <tr><th>Requisito</th><th>Oggi<br><span class="caption">2026</span></th><th>2067<br><span class="caption">nati nel 1997</span></th><th>2070<br><span class="caption">nati nel 2000</span></th><th>2076<br><span class="caption">nati nel 2006</span></th></tr>
+    <tr><td><strong><span class="old-t">Vecchiaia</span></strong> · uomini e donne<br><span class="caption">età, con almeno 20 anni di contributi</span></td><td>67 anni</td><td><strong>70 e 1 mese</strong></td><td><strong>70 e 3 mesi</strong></td><td><strong>70 e 6 mesi</strong></td></tr>
+    <tr><td><strong><span class="young-t">Anticipata</span></strong> (ex anzianità) · <strong>uomini</strong><br><span class="caption">anni di contributi, a qualsiasi età</span></td><td>42 e 10 mesi</td><td>45 e 11 mesi</td><td>46 e 1 mese</td><td>46 e 4 mesi</td></tr>
+    <tr><td><strong><span class="young-t">Anticipata</span></strong> (ex anzianità) · <strong>donne</strong><br><span class="caption">anni di contributi, a qualsiasi età</span></td><td>41 e 10 mesi</td><td>44 e 11 mesi</td><td>45 e 1 mese</td><td>45 e 4 mesi</td></tr>
+    <tr><td><strong><span class="young-t">Anticipata contributiva</span></strong> · uomini e donne<br><span class="caption">età, con almeno 20 anni di contributi e pensione alta</span></td><td>64 anni</td><td>67 e 1 mese</td><td>67 e 3 mesi</td><td>67 e 6 mesi</td></tr>
+  </table>
+  <p class="caption" style="margin-top:14px;font-size:0.8em">Per chi è nato dopo il 1996 la pensione è tutta contributiva. Serve una pensione di almeno 1 assegno sociale per la vecchiaia e di almeno 3 (3,2 dal 2030) per l'anticipata contributiva, ridotti a 2,8 per le donne con un figlio e a 2,6 con due o più.</p>
+  <div class="src" style="right:90px">Fonte: RGS, Rapporto n. 27 (2026), Appendice 1, Tabelle A1.4 e A1.5, scenario demografico Istat mediano (base 2024). Dal 2029 i requisiti sono stime. Le colonne indicano l'anno in cui ciascuna generazione raggiunge l'età di vecchiaia.</div>
+  <aside class="notes">Tre messaggi: la vecchiaia ormai è uguale per uomini e donne; la differenza di genere resta solo nell'anticipata, un anno di contributi in meno per le donne; tutti i requisiti salgono con la speranza di vita. L'anticipata per anni di contributi prevede inoltre una finestra di alcuni mesi prima della decorrenza. Il vecchio nome "pensione di anzianità" è stato sostituito da "pensione anticipata" con la riforma Fornero.</aside>
+</section>
+
+<section>
+  <h2>Ecco Alex, 20 anni: il calcolo della pensione passo per passo</h2>
+  <div class="cols">
+    <div style="flex:2"><table class="steps big" id="alex-steps" style="font-size:0.68em"></table></div>
+    <div style="flex:1;font-size:0.72em">
+      <div class="card center"><div class="big-number young" style="font-size:2.6em" id="alex-pension"></div><p style="margin:4px 0 10px">lordi al mese, da circa 70 anni (2076), in euro di oggi</p>
+        <div class="big-number" style="font-size:2em" id="alex-rr"></div><p style="margin:4px 0 0">dell'ultimo stipendio (tasso di sostituzione)</p></div>
+      <div style="display:flex;gap:16px;align-items:center;margin-top:14px;font-size:0.72em;text-align:left"><img src="img/rgs_rapporto27.jpg" alt="Copertina del Rapporto n. 27 della Ragioneria Generale dello Stato" style="height:185px;margin:0;border:1px solid var(--line);border-radius:4px;box-shadow:0 3px 10px rgba(0,0,0,.15)"><p style="margin:0"><strong>Ipotesi tratte da:</strong> Ragioneria Generale dello Stato, <em>Le tendenze di medio-lungo periodo del sistema pensionistico e socio-sanitario</em>, <a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/Attivit--i/Spesa-soci/Attivita_di_previsione_RGS/2026/Ltdmlpdspess-2026.pdf" target="_blank" rel="noopener">Rapporto n. 27</a> (2026).</p></div>
+      <p id="alex-why" hidden></p>
+    </div>
+  </div>
+  <div class="src">Calcolo illustrativo, non una stima INPS. Euro 2026, al lordo delle imposte. Ipotesi: crescita del PIL reale 0,5%/anno e produttività 0,9%/anno (RGS Rapporto n. 27, scenario nazionale base 2026–2070) più 0,6%/anno di progressione di carriera; requisiti di età dalla Tabella A1.4 RGS; coefficienti ≈ 5,55% a 70 anni e 6 mesi e ≈ 5,03% a 67 anni e 6 mesi, calibrati sulla Tabella 6.1 RGS (2070).</div>
+  <aside class="notes">Commentate le cinque righe. Il punto chiave: nel contributivo la pensione è letteralmente la somma di quanto versato, rivalutato con il PIL, divisa per la speranza di vita residua (il coefficiente). Chiedete: cosa succede se Alex inizia a 28 anni? Poi passate alla slide successiva per provarlo.</aside>
+</section>
+
+<section>
+  <h2>La tua pensione: prova gli scenari</h2>
+  <div id="pc-presets" class="pc-presets pc-large"></div>
+  <div class="cols pc-large" style="gap:26px">
+    <div style="flex:0.85">
+      <div class="ctrl"><label>Inizio a lavorare a <span class="val" id="pc-start-v"></span></label><input type="range" id="pc-start" min="19" max="32" step="1" value="24"></div>
+      <div class="ctrl"><label>Stipendio lordo iniziale (€/anno) <span class="val" id="pc-w0-v"></span></label><input type="range" id="pc-w0" min="14000" max="45000" step="1000" value="24000"></div>
+      <div class="ctrl"><label>Crescita del tuo stipendio (%/anno) <span class="val" id="pc-gw-v"></span></label><input type="range" id="pc-gw" min="0" max="3" step="0.1" value="1.5"></div>
+      <div class="ctrl"><label>Crescita del PIL (%/anno) <span class="val" id="pc-gdp-v"></span></label><input type="range" id="pc-gdp" min="-0.5" max="2" step="0.1" value="0.5"></div>
+      <div class="ctrl"><label>Anni senza contributi <span class="val" id="pc-gaps-v"></span></label><input type="range" id="pc-gaps" min="0" max="15" step="1" value="0"></div>
+      <div><button data-pc-rate="0.33" class="on">Dipendente</button><button data-pc-rate="0.24">Autonomo</button></div>
+      <div><button data-pc-exit="old" class="on">Vecchiaia (~70)</button><button data-pc-exit="early">Anticipata (~67)</button></div>
+      <div><span style="font-size:0.72em;font-weight:600">TFR:</span> <button data-pc-tfr="firm" class="on">in azienda</button><button data-pc-tfr="fund">a un fondo pensione</button></div>
+    </div>
+    <div style="flex:1.3">
+      <div class="pc-out" id="pc-out" style="font-size:0.88em"></div>
+      <div class="chart-box" hidden><canvas id="ch-pc"></canvas></div>
+    </div>
+  </div>
+  <div class="src">Calcolo illustrativo, non una stima INPS. Euro 2026, lordi. Ipotesi dal Rapporto RGS n. 27 (2026).</div>
+  <aside class="notes">Partite da "Base" e fate indovinare prima di cliccare. Messaggi: iniziare tardi e i buchi costano molto; la crescita è il rendimento nascosto dei contributi; gli autonomi ricevono meno; un fondo pensione aggiunge una seconda gamba.</aside>
+</section>
+
+<section>
+  <h2>Cosa sposta la spesa pensionistica italiana?</h2>
+  <div class="cols scen-large">
+    <div style="flex:0.8;font-size:1.02em" id="scen-buttons"></div>
+    <div style="flex:2"><div class="chart-box short"><canvas id="ch-scen"></canvas></div><div style="display:flex;gap:14px;align-items:center;margin-top:6px;font-size:0.58em;text-align:left"><img src="img/ageing_report_2024.jpg" alt="Copertina del 2024 Ageing Report della Commissione europea" style="height:100px;margin:0;border:1px solid var(--line);border-radius:4px;box-shadow:0 3px 10px rgba(0,0,0,.15)"><p style="margin:0"><strong>Scenari tratti da:</strong> Commissione europea e CPE, <a href="https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf" target="_blank" rel="noopener">2024 Ageing Report</a>, Institutional Paper 279.</p></div></div>
+  </div>
+  <p class="caption" id="scen-text" style="font-size:0.92em"></p>
+  <div class="src" style="right:90px">Fonte: CE, 2024 Ageing Report, appendice statistica, Tabelle II.1.64, II.1.85–91 (Italia, spesa pensionistica pubblica in % del PIL). Scenario manovra: nostra stima su ddl di bilancio 2027, art. 55 e relazione tecnica (AGI, 1/11/2026), con taglio applicato una volta; dopo il 2036 valori estrapolati. Senza Fornero: RGS, Rapporto n. 27, Riquadro 2.1, Fig. A.1.</div>
+  <aside class="notes">Scenario senza Fornero: è la differenza tra la normativa antecedente al DL 201/2011 e quella vigente, letta dalla Fig. A.1 del Riquadro 2.1 RGS e sommata allo scenario base dell'Ageing Report. Esclude anche le norme successive (per esempio Quota 100) e si ferma al 2050 perché la figura RGS arriva al 2060. Fate prima votare gli studenti su quale leva aiuta di più: migrazione, fecondità, occupazione degli anziani, produttività. Poi cliccate. Lo scenario della manovra 2027 non viene dall'Ageing Report: è una nostra stima, sottratta allo scenario base, e la relazione tecnica si ferma al 2036. Vale per un taglio applicato una sola volta; se fosse ripetuto ogni anno i risparmi si accumulerebbero, come ordine di grandezza circa 0,5 punti di PIL nel 2036.</aside>
+</section>
+
+<!-- ============================ 04 - VOI ============================ -->
+<section class="act-title"><div class="num">04</div><h2>Voi e il futuro</h2><p>Scelte finanziarie · giovani · nuovo patto</p></section>
+
+<section>
+  <h2>I tre pilastri della pensione</h2>
+  <div class="cols">
+    <div class="card" style="font-size:0.95em"><h3>Pilastri</h3>
+      <p><strong>1°</strong> pubblico e obbligatorio (INPS)<br><strong>2°</strong> fondi pensione legati al lavoro e TFR<br><strong>3°</strong> piani individuali</p>
+      <p>Con un fondo pensione, la pensione di una giovane dipendente passa dal <strong>58%</strong> al <strong>66%</strong> dell'ultimo stipendio (caso tipo RGS con 38 anni di contributi).</p></div>
+    <div class="center">
+      <div class="big-number young" style="font-size:2.6em">29,9%</div><p style="font-size:0.9em">dei giovani (15–34 anni) ha un fondo pensione:<br>la quota più bassa di tutte le età</p>
+    </div>
+  </div>
+  <div class="src">Fonti: COVIP, Relazione per l'anno 2024; RGS Rapporto n. 27 (2026).</div>
+</section>
+
+<section>
+  <div class="menti" data-menti="bigthree" hidden></div>
+  <h2>Mettetevi alla prova: tre domande di finanza</h2>
+  <div id="bigthree" style="font-size:1.3em"></div>
+  <p class="caption" style="font-size:0.85em">Nel mondo solo 1 adulto su 3 risponde bene a tutte. In Italia solo il <strong>37%</strong> degli adulti ha basi di finanza (S&amp;P Global, 2014).</p>
+</section>
+
+<section>
+  <h2>Cosa cambierà il patto</h2>
+  <table style="font-size:0.95em;margin-top:30px">
+    <tr><td><strong>Demografia</strong></td><td style="white-space:nowrap"><strong>38 → 64</strong></td><td>over 65 ogni 100 persone in età da lavoro, dal 2024 al 2050</td></tr>
+    <tr><td><strong>Migrazioni</strong></td><td style="white-space:nowrap"><strong>−0,6 punti</strong></td><td>di PIL di spesa nel 2050, con un terzo di migranti in più</td></tr>
+    <tr><td><strong>Lavoro</strong></td><td style="white-space:nowrap"><strong>70 anni</strong></td><td>età della pensione di vecchiaia nel 2070</td></tr>
+    <tr><td><strong>Intelligenza artificiale</strong></td><td style="white-space:nowrap"><strong>60%</strong></td><td>dei lavori esposti all'IA nei paesi avanzati</td></tr>
+  </table>
+  <div class="src">Fonti: CE, 2024 Ageing Report; RGS Rapporto n. 27 (2026); FMI (2024), SDN/2024/001.</div>
+</section>
+
+<section>
+  <div class="menti" data-menti="cloud" hidden></div>
+  <h2>Cosa mettereste nel nuovo patto tra generazioni?</h2>
+  <div style="text-align:center"><input type="text" id="cloud-in" placeholder="Scrivete una parola e premete Invio"> <button id="cloud-clear">Cancella</button></div>
+  <div id="cloud"></div>
+</section>
+
+<section>
+  <h2>Da portare a casa</h2>
+  <div class="menti" data-menti="after" hidden></div>
+  <ol style="font-size:1.08em">
+    <li>La pensione pubblica è un <strong>patto tra generazioni</strong>: i giovani pagano gli anziani.</li>
+    <li>Funziona bene quando ci sono <strong>crescita e tanti giovani</strong>.</li>
+    <li>Oggi nascono pochi bambini e viviamo più a lungo: <strong>il patto deve cambiare</strong>.</li>
+    <li>Voi avrete pensioni più basse in rapporto allo stipendio: <strong>informatevi e pianificate</strong>.</li>
+  </ol>
+</section>
+
+<section style="font-size:0.5em">
+  <h2 style="font-size:2em">Fonti principali</h2>
+  <div class="cols">
+    <div><ul>
+      <li>Samuelson, P. (1958), JPE.</li>
+      <li>Aaron, H. (1966), CJEPS.</li>
+      <li>Becker, G. e Murphy, K. (1988), JLE.</li>
+      <li>Boldrin, M. e Montes, A. (2005), RES.</li>
+      <li>Lancia, F. e Russo, A. (2016), JEEA: Public education and pensions in democracy: A political economy theory.</li>
+      <li>Lusardi, A. e Mitchell, O. (2014), JEL.</li>
+      <li>Romp, W. (2024), Netspar DP 07/2024-022.</li>
+    </ul></div>
+    <div><ul>
+      <li>RGS (2026), <a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/Attivit--i/Spesa-soci/Attivita_di_previsione_RGS/2026/Ltdmlpdspess-2026.pdf" target="_blank" rel="noopener">Rapporto n. 27</a>.</li>
+      <li>Commissione europea e CPE (2024), 2024 Ageing Report.</li>
+      <li>INPS (2026), XXV Rapporto Annuale.</li>
+      <li>COVIP (2025), Relazione per l'anno 2024.</li>
+      <li>Nazioni Unite (2024), World Population Prospects.</li>
+      <li>FMI (2024), SDN/2024/001.</li>
+    </ul></div>
+  </div>
+</section>
+
+</div></div>
+
+<script src="vendor/reveal.min.js"></script>
+<script src="vendor/reveal-notes.min.js"></script>
+<script src="vendor/chart.umd.min.js"></script>
+<script src="data/slide_data.js"></script>
+<script src="vendor/d3.min.js"></script>
+<script src="vendor/topojson.min.js"></script>
+<script src="data/world_110m.js"></script>
+<script src="data/reforms_data.js"></script>
+<script src="js/reform_viz.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

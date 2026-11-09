@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welfare State: An Intergenerational Pact (short version)</title>
+<link rel="stylesheet" href="vendor/reveal-reset.min.css">
+<link rel="stylesheet" href="vendor/reveal.min.css">
+<link rel="stylesheet" href="vendor/reveal-white.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- English version of the SHORT deck (index_it_short.html): every change must be mirrored in both files.
+     Uses the same js/app.js and js/reform_viz.js: the ids of the interactive elements must stay identical. -->
+<div class="reveal"><div class="slides">
+
+<!-- ============================ HOOK ============================ -->
+<section class="act-title">
+  <h1>Welfare State:<br>An Intergenerational Pact</h1>
+  <p class="caption">Alessia Russo · Università di Padova</p>
+  <aside class="notes">Welcome. Today we look at pensions as a pact between generations, one that concerns you too.</aside>
+</section>
+
+<section>
+  <h2>Pensions in numbers</h2>
+  <div class="cols center" style="margin-top:60px">
+    <div><div class="big-number old">15.3%</div><p>pension spending / GDP (2024)</p></div>
+    <div><div class="big-number">16.4 mln</div><p>pensioners<br><span class="caption">2025</span></p></div>
+    <div><div class="big-number young">1.7</div><p>workers per pensioner<br><span class="caption">27.2 mln insured workers / 16.4 mln pensioners, 2025</span></p></div>
+  </div>
+  <p class="center" style="margin-top:40px">Who pays? <strong>You do.</strong> And one day someone will pay for you.</p>
+  <div class="src">Sources: RGS, Rapporto n. 27 (2026); INPS, XXV Rapporto Annuale (2026), Relazione del Presidente.</div>
+</section>
+
+<section>
+  <h2>The hidden debt: pension promises already made</h2>
+  <div class="cols">
+    <div style="flex:1.6"><div class="chart-box short"><canvas id="ch-liab"></canvas></div></div>
+    <div style="flex:1;font-size:0.65em">
+      <p>Accrued pension entitlements: what has <em>already been promised</em> to today's workers and pensioners.</p>
+      <div class="big-number old" style="font-size:2.4em">438%</div><p>of GDP in Italy (2021)</p>
+      <div class="big-number" style="font-size:2.4em">137%</div><p>official public debt (2025)</p>
+      <p class="caption">Not debt in the legal sense, but it shows how much of the future is already committed.</p>
+    </div>
+  </div>
+  <div class="src">Source: Eurostat, nasa_10_pens1 (Supplementary Table 29, all social insurance pension schemes); gov_10dd_edpt1.</div>
+</section>
+
+<section>
+  <h2>What is a pension for?</h2>
+  <div class="cols">
+    <div class="card"><h3>It protects us from</h3>
+      <ul><li><strong>Old age</strong>: living longer than our savings</li>
+      <li><strong>Disability</strong>: no longer being able to work</li>
+      <li><strong>Death</strong> of the family's earner</li></ul></div>
+    <div class="card"><h3>It serves to</h3>
+      <ul><li><strong>Spread income</strong> over a whole life</li>
+      <li><strong>Prevent poverty</strong> in old age</li>
+      <li><strong>Redistribute</strong> between rich and poor, and between generations</li></ul></div>
+  </div>
+  <p class="caption" style="margin-top:20px">On our own we save too little for old age: that is why the state makes it <em>compulsory</em>.</p>
+</section>
+
+<section>
+  <h2>Two ways to pay for pensions</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;font-size:0.84em">
+    <div class="card fragment" data-fragment-index="0" style="grid-column:span 2"><h3 style="font-size:1.25em;margin-bottom:6px">Pay-as-you-go</h3>
+      <p style="margin:0 0 8px"><strong>Today's workers</strong> pay the pensions of <strong>today's retirees</strong>. It yields as much as <strong>workers and wages</strong> grow.</p>
+      <p style="margin:0"><strong>Examples:</strong> Italy, Germany, Spain.</p></div>
+    <div class="card fragment" data-fragment-index="3" style="grid-row:span 2"><h3 style="font-size:1.25em;margin-bottom:6px">Funded</h3>
+      <p style="margin:0 0 8px">Everyone puts money aside in a <strong>fund</strong> that invests it.</p>
+      <p style="margin:0 0 8px">It yields what <strong>financial markets</strong> yield. These are pension funds.</p>
+      <p style="margin:0"><strong>Examples:</strong> Australia, Netherlands, Denmark, Chile.</p></div>
+    <div class="card fragment" data-fragment-index="1"><h3 style="font-size:1.1em;margin-bottom:6px"><span class="old-t">Earnings-related (<em>retributivo</em>)</span></h3>
+      <p style="margin:0 0 8px">Pension linked to <strong>wages</strong>, often those of the last years.</p>
+      <p style="margin:0"><strong>Examples:</strong> Spain, Italy before 1996.</p></div>
+    <div class="card fragment" data-fragment-index="2"><h3 style="font-size:1.1em;margin-bottom:6px"><span class="young-t">Contribution-based (<em>contributivo</em>)</span></h3>
+      <p style="margin:0 0 8px">Pension linked to <strong>what you paid in</strong> and to life expectancy.</p>
+      <p style="margin:0"><strong>Examples:</strong> Italy since 1996, Sweden, Poland, Latvia.</p></div>
+  </div>
+  <p class="caption fragment" data-fragment-index="4" style="margin-top:14px">In many countries the two systems coexist.</p>
+  <div class="src">Sources: OECD, Pensions at a Glance 2019 and 2023, pension funds data 2021; Law 335/1995; literature on notional defined contribution systems; MDPI Sustainability 13(4), 2021 (Spain); Chilean Law 21.735 (2025).</div>
+</section>
+
+<!-- ============================ 01 - THEORY ============================ -->
+<section class="act-title"><div class="num">01</div><h2>A contract between generations</h2><p>When does everyone gain?</p></section>
+
+<section>
+  <h2>The candy game (Samuelson, 1958)</h2>
+  <p class="center" style="font-size:0.82em;margin:0">Each young person gives <strong>1 candy</strong> to the old. When old, they will receive the candies of the young who come next.</p>
+  <p class="center" style="font-size:0.82em;margin:8px 0 0">Return on the pension = <strong>(1+n)(1+g) − 1</strong></p>
+  <p class="center" style="font-size:0.66em;margin:2px 0 0"><strong>1+n = children per woman / 2</strong> (with 2 children n = 0: constant population) · g = productivity growth</p>
+  <div class="chain chain-big chain-tfr fragment" id="chain"></div>
+  <div class="chain-ctrls">
+    <div class="ctrl"><label>Children per woman <span class="val" id="cc-n-v"></span></label><input type="range" id="cc-n" min="1" max="4" step="0.1" value="3"></div>
+    <div class="ctrl"><label>Productivity growth (more candies per worker) <span class="val" id="cc-g-v"></span></label><input type="range" id="cc-g" min="0" max="1" step="0.1" value="0"></div>
+  </div>
+  <div class="center"><button id="cc-boom">Scenario: baby boom → few births</button><button id="cc-reset">Reset</button></div>
+  <aside class="notes">Gen 0 is a couple: each dot is a person, smaller dots are fractions of a person. Growth per generation: 1+n = children per woman / 2. In reality the threshold is about 2.1, because not everyone reaches adulthood. Classroom version: line up 5 groups of students, first larger and larger, then smaller. Each young student passes 1 candy to the group before. Ask the last groups how they feel.</aside>
+</section>
+
+<section>
+  <h2>When does pay-as-you-go pay off?</h2>
+  <div class="cols">
+    <div style="flex:0.8">
+      <div class="formula">It pays off if &nbsp; n + g &gt; r</div>
+      <p style="font-size:0.55em;margin-top:8px">n = population growth · g = productivity growth · r = interest rate</p>
+      <div class="ctrl"><label>n: population (%/yr) <span class="val" id="ac-n-v"></span></label><input type="range" id="ac-n" min="-1.5" max="3" step="0.1" value="1"></div>
+      <div class="ctrl"><label>g: productivity (%/yr) <span class="val" id="ac-g-v"></span></label><input type="range" id="ac-g" min="-0.5" max="5" step="0.1" value="3"></div>
+      <div class="ctrl"><label>r: real interest (%/yr) <span class="val" id="ac-r-v"></span></label><input type="range" id="ac-r" min="-1" max="6" step="0.1" value="2"></div>
+      <button data-ac="1965">Italy ~1965</button><button data-ac="2050">Italy ~2050</button>
+      <div id="ac-verdict" style="font-size:0.7em;margin-top:10px;font-weight:700"></div>
+    </div>
+    <div><div class="chart-box short"><canvas id="ch-aaron"></canvas></div></div>
+  </div>
+  <p class="caption">Aaron condition (1966). Chart: what €1 paid in each year for 40 years is worth at retirement, under the two systems.</p>
+  <aside class="notes">From the number of children to n: n ≈ ln(TFR / 2.1) / 30 a year, where 30 years is the length of a generation. TFR 3 → +1.2%; TFR 2.1 → 0; Italy 1.18 → −1.9%. This is long-run n, with constant TFR and no migration.</aside>
+</section>
+
+<section>
+  <h2>Pensions and schools: two halves of the same pact</h2>
+  <p style="font-size:0.95em;margin-top:30px">Parents pay for their children's <strong>schooling</strong>. Children, once adults, pay for their parents' <strong>pensions</strong>. Education raises productivity (<strong>g</strong>), and a higher g pays for pensions.</p>
+  <div class="card" style="font-size:1em;margin-top:30px">
+    <h3 style="font-size:1.15em">Schools and pensions grew up together</h3>
+    <ul>
+      <li><strong>UK:</strong> Education Act 1944 → National Insurance Act 1946</li>
+      <li><strong>Italy:</strong> <em>scuola media unica</em> 1962 → Brodolini pension reform 1969</li>
+      <li><strong>US:</strong> Social Security 1935 → GI Bill 1944, mass college</li>
+    </ul>
+  </div>
+  <p class="caption" style="margin-top:24px;font-size:0.8em">Becker and Murphy (1988); Boldrin and Montes (2005); Lancia and Russo (2016).</p>
+  <aside class="notes">If you cut schools while keeping pensions, the pact breaks from the other side.</aside>
+</section>
+
+<!-- ============================ 02 - CONDITIONS CHANGE ============================ -->
+<section class="act-title"><div class="num">02</div><h2>The world has changed</h2><p>Fewer births · longer lives · little growth</p></section>
+
+<section>
+  <h2>Italy's population pyramid, 1950 → 2100</h2>
+  <div class="cols">
+    <div style="flex:2"><div class="chart-box"><canvas id="ch-pyramid"></canvas></div></div>
+    <div style="flex:0.8">
+      <div class="big-number" id="pyr-year" style="font-size:2.6em">2025</div>
+      <input type="range" id="pyr-slider" min="1950" max="2100" step="5" value="2025">
+      <button id="pyr-play">▶ Play</button><button id="pyr-hide">Hide year</button>
+      <p style="font-size:0.6em"><span class="young-t">■</span> men &nbsp; <span class="old-t">■</span> women<br>(thousands)</p>
+    </div>
+  </div>
+  <div class="src">Source: United Nations, World Population Prospects 2024, medium variant.</div>
+</section>
+
+<section>
+  <h2>Fewer and fewer children per woman</h2>
+  <div class="chart-box"><canvas id="ch-tfr"></canvas></div>
+  <p class="caption">It takes 2.1 children per woman to keep the population stable. In Italy there are <strong>1.18</strong> (2024).</p>
+  <div class="src">Sources: UN WPP 2024; ISTAT.</div>
+</section>
+
+<section>
+  <h2>More and more older people for each worker</h2>
+  <div class="chart-box"><canvas id="ch-oadr"></canvas></div>
+  <p class="caption">People aged 65+ per 100 of working age (15–64). Italy: <strong>38 today → 64 in 2050</strong>.</p>
+  <div class="src">Sources: UN WPP 2024; RGS Rapporto n. 27 (2026).</div>
+</section>
+
+<section>
+  <h2>Italy: the GDP growth rate (n + g) has collapsed</h2>
+  <div class="chart-box short"><canvas id="ch-growth"></canvas></div>
+  <p class="caption">Real GDP growth (≈ n + g) by decade, compared with the real interest rate (long-term government bonds net of inflation). 2021–24 is the post-COVID rebound. RGS projects average real growth of only <strong>0.5% a year for 2026–2070</strong>.</p>
+  <div class="src">Sources: World Bank WDI (NY.GDP.MKTP.KD.ZG, NY.GDP.DEFL.KD.ZG); Eurostat (irt_lt_mcby_a); RGS Rapporto n. 27 (2026).</div>
+</section>
+
+<!-- ============================ 03 - ITALY ============================ -->
+<section class="act-title"><div class="num">03</div><h2>Pensions in Italy</h2><p>Reforms · rules · what it means for you</p></section>
+
+<section>
+  <h2>Why are reforms so hard?</h2>
+  <div class="cols" style="margin-top:30px">
+    <div class="card" style="font-size:1em"><h3 style="font-size:1.2em">The problem</h3><ul>
+      <li>The losers know <strong>right away</strong>, and they vote.</li>
+      <li>The winners are <strong>young or not yet born</strong>, and do not vote.</li>
+      <li>The typical voter in Italy is over 50.</li></ul></div>
+    <div class="card" style="font-size:1em"><h3 style="font-size:1.2em">So reforms are…</h3><ul>
+      <li><strong>Slow</strong>: they apply mostly to the young</li>
+      <li><strong>Back-and-forth</strong>: reforms and counter-reforms (Quota 100…)</li>
+      <li><strong>Automatic</strong>, when possible: the age rises with life expectancy</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2 style="margin-bottom:0.25em">Who reformed, and when? 23 countries, 1970–2023</h2>
+  <div data-viz="reform-map" class="rm-flip"></div>
+  <div class="src">Source: Romp, W. (2024), Netspar DP 07/2024-022; map: Natural Earth. Press ▶, then click a country.</div>
+  <aside class="notes">Press play: in the 1970s teal dominates (more generous pensions), from the 1990s orange (cuts). Click Italy.</aside>
+</section>
+
+<section>
+  <h2>1973: the Rumor government's promises</h2>
+  <div class="cols" style="align-items:center">
+    <div style="flex:1.35"><img src="img/governo_rumor.jpg" alt="Italian newspaper clipping, 29 August 1973: 'Rumor chairs a summit of the economic ministers. The new pensions'" style="width:100%;border:1px solid var(--line);border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.15)"></div>
+    <div style="font-size:0.78em">
+      <p><strong>Rome, 29 August 1973.</strong> The Rumor government negotiates with the unions to raise social pensions, workers' pensions, unemployment benefits and family allowances.</p>
+      <p>The only "problem" is working out the cost to the State and to INPS: nobody asks who will pay in 40 years.</p>
+      <p>A few months later (DPR 1092/1973) come the <strong>"baby pensions"</strong>: civil servants retire after 19 years, 6 months and 1 day; married women with children after 14 years, 6 months and 1 day.</p>
+    </div>
+  </div>
+  <div class="src">Source: clipping from an Italian daily newspaper of the time ("Informazione attualità" page), 30 August 1973.</div>
+  <aside class="notes">High growth and a young population pyramid: generous pension promises looked free. Note the tone: the inquiry is only to "assess the costs", the decision is already made. Baby pensions were abolished only in 1992 (Amato); some are still being paid today.</aside>
+</section>
+
+<section>
+  <h2>The main pension reforms in Italy</h2>
+  <table style="font-size:0.62em">
+    <tr><th>Year</th><th>Who</th><th>What changes</th></tr>
+    <tr><td style="white-space:nowrap"><strong>1919–52</strong></td><td>Law 218/1952</td><td>Compulsory pension, <strong>funded</strong>; post-war <strong>inflation</strong> wipes out the reserves and from 1952 Italy moves to <strong>pay-as-you-go</strong></td></tr>
+    <tr><td><strong>1969</strong></td><td>Brodolini<br><span class="caption">Labour minister</span></td><td>The <span class="old-t"><em>retributivo</em></span> is born: pension up to <strong>80% of the last wage</strong>; the social pension is created</td></tr>
+    <tr><td><strong>1973</strong></td><td>Rumor government</td><td><strong>"Baby pensions"</strong> for public employees: retirement with less than 20 years of contributions</td></tr>
+    <tr><td><strong>1992</strong></td><td>Amato<br><span class="caption">Prime Minister</span></td><td>Age from 55/60 to <strong>60/65</strong> (women/men); pensions revalued with prices only</td></tr>
+    <tr><td><strong>1995</strong></td><td>Dini<br><span class="caption">Prime Minister</span></td><td>The <span class="young-t"><em>contributivo</em></span> is born, for those who start working from 1996</td></tr>
+    <tr><td><strong>2004–07</strong></td><td>Maroni → Damiano<br><span class="caption">Labour ministers</span></td><td>The <strong>"scalone"</strong> (a sudden jump in the age), then replaced by the <strong>"quote"</strong> (age + years of contributions)</td></tr>
+    <tr><td><strong>2010</strong></td><td>Sacconi<br><span class="caption">Labour minister</span></td><td>Retirement age <strong>linked to life expectancy</strong></td></tr>
+    <tr><td><strong>2011</strong></td><td>Fornero<br><span class="caption">Labour minister, Monti government</span></td><td><strong><em>Contributivo</em> for everyone</strong> from 2012 (pro rata); old-age pension at 66, then <strong>67</strong></td></tr>
+    <tr><td><strong>2019–25</strong></td><td>Conte I → Meloni governments</td><td><strong>Quota 100, 102, 103</strong>: temporary early exits (e.g. age 62 + 38 years of contributions)</td></tr>
+  </table>
+  <aside class="notes">Point out the rhythm: expansion in the 1960s and 70s, then from 1992 cuts every few years, with some steps back (Quota 100). Reforms are sometimes named after the Labour minister, sometimes after the Prime Minister.</aside>
+</section>
+
+<section>
+  <h2><em>Retributivo</em> and <em>contributivo</em> in Italy</h2>
+  <div class="cols" style="gap:22px">
+    <div class="card" style="font-size:0.85em"><h3 style="font-size:1.15em"><span class="old-t"><em>Retributivo</em></span> (before 1996)</h3>
+      <p><strong>"You will get a pension linked to your last wage."</strong></p><ul>
+      <li>About <strong>2% of the last wage for each year</strong> of work.</li>
+      <li>40 years of work → about <strong>80%</strong> of the wage.</li></ul></div>
+    <div class="card" style="font-size:0.85em"><h3 style="font-size:1.15em"><span class="young-t"><em>Contributivo</em></span> (since 1996: <span class="young-t">you</span>)</h3>
+      <p><strong>"You will get according to what you paid in."</strong></p><ul>
+      <li>Each year <strong>33% of your pay</strong> goes into a virtual piggy bank.</li>
+      <li>The piggy bank grows with GDP.</li>
+      <li><strong>Transformation coefficient</strong>: annual pension = final piggy bank × coefficient. It rises with the retirement age and falls if people live longer.</li>
+      <li>Starting late or having gaps <strong>lowers the pension</strong>.</li></ul></div>
+  </div>
+  <p class="caption" style="margin-top:24px;font-size:0.88em">Today people retire at <strong>67</strong> (with at least 20 years of contributions), and the age rises with life expectancy: about <strong>70</strong> for you.</p>
+  <aside class="notes">In one line: under the retributivo the state promises 80% of the last wage; under the contributivo it gives you what you paid in, divided by the years you have left. The money is not invested: it is still pay-as-you-go.</aside>
+</section>
+
+<section>
+  <h2>At what age will you retire? People born after 1996</h2>
+  <table style="font-size:0.72em;margin-top:18px">
+    <tr><th>Requirement</th><th>Today<br><span class="caption">2026</span></th><th>2067<br><span class="caption">born in 1997</span></th><th>2070<br><span class="caption">born in 2000</span></th><th>2076<br><span class="caption">born in 2006</span></th></tr>
+    <tr><td><strong><span class="old-t">Old-age pension</span></strong> · men and women<br><span class="caption">age, with at least 20 years of contributions</span></td><td>67</td><td><strong>70 y 1 m</strong></td><td><strong>70 y 3 m</strong></td><td><strong>70 y 6 m</strong></td></tr>
+    <tr><td><strong><span class="young-t">Early pension</span></strong> (formerly <em>anzianità</em>) · <strong>men</strong><br><span class="caption">years of contributions, at any age</span></td><td>42 y 10 m</td><td>45 y 11 m</td><td>46 y 1 m</td><td>46 y 4 m</td></tr>
+    <tr><td><strong><span class="young-t">Early pension</span></strong> (formerly <em>anzianità</em>) · <strong>women</strong><br><span class="caption">years of contributions, at any age</span></td><td>41 y 10 m</td><td>44 y 11 m</td><td>45 y 1 m</td><td>45 y 4 m</td></tr>
+    <tr><td><strong><span class="young-t">Early <em>contributivo</em> pension</span></strong> · men and women<br><span class="caption">age, with at least 20 years of contributions and a high pension</span></td><td>64</td><td>67 y 1 m</td><td>67 y 3 m</td><td>67 y 6 m</td></tr>
+  </table>
+  <p class="caption" style="margin-top:14px;font-size:0.8em">For people born after 1996 the pension is entirely <em>contributivo</em>. It must be at least 1 <em>assegno sociale</em> for the old-age pension and at least 3 (3.2 from 2030) for the early <em>contributivo</em> pension, reduced to 2.8 for women with one child and 2.6 with two or more.</p>
+  <div class="src" style="right:90px">Source: RGS, Rapporto n. 27 (2026), Appendix 1, Tables A1.4 and A1.5, ISTAT median demographic scenario (base 2024). Requirements from 2029 are estimates. Columns show the year in which each generation reaches the old-age requirement.</div>
+  <aside class="notes">Three messages: the old-age pension is now the same for men and women; the gender gap remains only in the early pension, one year of contributions less for women; all requirements rise with life expectancy. The early pension based on years of contributions also has a waiting window of a few months before payment starts. The old name "pensione di anzianità" was replaced by "pensione anticipata" with the Fornero reform.</aside>
+</section>
+
+<section>
+  <h2>Meet Alex, 20: the pension calculation step by step</h2>
+  <div class="cols">
+    <div style="flex:2"><table class="steps big" id="alex-steps" style="font-size:0.68em"></table></div>
+    <div style="flex:1;font-size:0.72em">
+      <div class="card center"><div class="big-number young" style="font-size:2.6em" id="alex-pension"></div><p style="margin:4px 0 10px">gross per month, from about age 70 (2076), in today's euros</p>
+        <div class="big-number" style="font-size:2em" id="alex-rr"></div><p style="margin:4px 0 0">of the last wage (replacement rate)</p></div>
+      <div style="display:flex;gap:16px;align-items:center;margin-top:14px;font-size:0.72em;text-align:left"><img src="img/rgs_rapporto27.jpg" alt="Cover of Report no. 27 by the Italian State General Accounting Office" style="height:185px;margin:0;border:1px solid var(--line);border-radius:4px;box-shadow:0 3px 10px rgba(0,0,0,.15)"><p style="margin:0"><strong>Assumptions from:</strong> Ragioneria Generale dello Stato, <em>Le tendenze di medio-lungo periodo del sistema pensionistico e socio-sanitario</em>, <a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/Attivit--i/Spesa-soci/Attivita_di_previsione_RGS/2026/Ltdmlpdspess-2026.pdf" target="_blank" rel="noopener">Rapporto n. 27</a> (2026).</p></div>
+      <p id="alex-why" hidden></p>
+    </div>
+  </div>
+  <div class="src">Illustrative calculation, not an INPS estimate. 2026 euros, gross of tax. Assumptions: real GDP growth 0.5%/yr and productivity 0.9%/yr (RGS Rapporto n. 27, national baseline 2026–2070) plus 0.6%/yr career progression; age requirements from RGS Table A1.4; coefficients ≈ 5.55% at 70 y 6 m and ≈ 5.03% at 67 y 6 m, calibrated on RGS Table 6.1 (2070).</div>
+  <aside class="notes">Walk through the rows. The key point: in the contributivo system the pension is literally the sum of what you paid in, revalued with GDP, divided by your remaining life expectancy (the coefficient). Ask: what happens if Alex starts at 28? Then go to the next slide to test it.</aside>
+</section>
+
+<section>
+  <h2>Your pension: test the scenarios</h2>
+  <div id="pc-presets" class="pc-presets pc-large"></div>
+  <div class="cols pc-large" style="gap:26px">
+    <div style="flex:0.85">
+      <div class="ctrl"><label>Start working at <span class="val" id="pc-start-v"></span></label><input type="range" id="pc-start" min="19" max="32" step="1" value="24"></div>
+      <div class="ctrl"><label>Starting gross pay (€/year) <span class="val" id="pc-w0-v"></span></label><input type="range" id="pc-w0" min="14000" max="45000" step="1000" value="24000"></div>
+      <div class="ctrl"><label>Growth of your pay (%/year) <span class="val" id="pc-gw-v"></span></label><input type="range" id="pc-gw" min="0" max="3" step="0.1" value="1.5"></div>
+      <div class="ctrl"><label>GDP growth (%/year) <span class="val" id="pc-gdp-v"></span></label><input type="range" id="pc-gdp" min="-0.5" max="2" step="0.1" value="0.5"></div>
+      <div class="ctrl"><label>Years without contributions <span class="val" id="pc-gaps-v"></span></label><input type="range" id="pc-gaps" min="0" max="15" step="1" value="0"></div>
+      <div><button data-pc-rate="0.33" class="on">Employee</button><button data-pc-rate="0.24">Self-employed</button></div>
+      <div><button data-pc-exit="old" class="on">Old age (~70)</button><button data-pc-exit="early">Early (~67)</button></div>
+      <div><span style="font-size:0.72em;font-weight:600">TFR:</span> <button data-pc-tfr="firm" class="on">kept by employer</button><button data-pc-tfr="fund">to a pension fund</button></div>
+    </div>
+    <div style="flex:1.3">
+      <div class="pc-out" id="pc-out" style="font-size:0.88em"></div>
+      <div class="chart-box" hidden><canvas id="ch-pc"></canvas></div>
+    </div>
+  </div>
+  <div class="src">Illustrative calculation, not an INPS estimate. 2026 euros, gross. Assumptions from RGS Rapporto n. 27 (2026).</div>
+  <aside class="notes">Start from "Baseline" and have students guess before clicking. Messages: starting late and gaps cost a lot; growth is the hidden return on contributions; the self-employed receive less; a pension fund adds a second leg.</aside>
+</section>
+
+<section>
+  <h2>What moves Italy's pension spending?</h2>
+  <div class="cols scen-large">
+    <div style="flex:0.8;font-size:1.02em" id="scen-buttons"></div>
+    <div style="flex:2"><div class="chart-box short"><canvas id="ch-scen"></canvas></div><div style="display:flex;gap:14px;align-items:center;margin-top:6px;font-size:0.58em;text-align:left"><img src="img/ageing_report_2024.jpg" alt="Cover of the European Commission's 2024 Ageing Report" style="height:100px;margin:0;border:1px solid var(--line);border-radius:4px;box-shadow:0 3px 10px rgba(0,0,0,.15)"><p style="margin:0"><strong>Scenarios from:</strong> European Commission and EPC, <a href="https://economy-finance.ec.europa.eu/document/download/971dd209-41c2-425d-94f8-e3c3c3459af9_en?filename=ip279_en.pdf" target="_blank" rel="noopener">2024 Ageing Report</a>, Institutional Paper 279.</p></div></div>
+  </div>
+  <p class="caption" id="scen-text" style="font-size:0.92em"></p>
+  <div class="src" style="right:90px">Source: EC, 2024 Ageing Report, Statistical annex, Tables II.1.64, II.1.85–91 (Italy, public pension spending as % of GDP). Budget scenario: our estimate from the 2027 draft budget law, art. 55 and technical report (AGI, 1 Nov 2026), with the cut applied once; values after 2036 are extrapolated. Without Fornero: RGS, Rapporto n. 27, Box 2.1, Fig. A.1.</div>
+  <aside class="notes">Without Fornero: the difference between the rules before DL 201/2011 and current law, read from Fig. A.1 of RGS Box 2.1 and added to the Ageing Report baseline. It also excludes later rules (for example Quota 100) and stops at 2050 because the RGS figure ends in 2060. Have students vote first on which lever helps most: migration, fertility, employment of older workers, productivity. Then click. The 2027 budget scenario does not come from the Ageing Report: it is our own estimate, subtracted from the baseline, and the technical report stops at 2036. It assumes a cut applied once; if repeated every year the savings would add up, as an order of magnitude about 0.5 points of GDP in 2036.</aside>
+</section>
+
+<!-- ============================ 04 - YOU ============================ -->
+<section class="act-title"><div class="num">04</div><h2>You and the future</h2><p>Financial choices · young people · a new pact</p></section>
+
+<section>
+  <h2>The three pillars of pensions</h2>
+  <div class="cols">
+    <div class="card" style="font-size:0.95em"><h3>Pillars</h3>
+      <p><strong>1st</strong> public and compulsory (INPS)<br><strong>2nd</strong> occupational pension funds and TFR<br><strong>3rd</strong> individual plans</p>
+      <p>With a pension fund, a young employee's pension goes from <strong>58%</strong> to <strong>66%</strong> of the last wage (RGS standard case with 38 years of contributions).</p></div>
+    <div class="center">
+      <div class="big-number young" style="font-size:2.6em">29.9%</div><p style="font-size:0.9em">of young people (15–34) have a pension fund:<br>the lowest share of any age group</p>
+    </div>
+  </div>
+  <div class="src">Sources: COVIP, Relazione per l'anno 2024; RGS Rapporto n. 27 (2026).</div>
+</section>
+
+<section>
+  <div class="menti" data-menti="bigthree" hidden></div>
+  <h2>Test yourselves: three finance questions</h2>
+  <div id="bigthree" style="font-size:1.3em"></div>
+  <p class="caption" style="font-size:0.85em">Worldwide only 1 adult in 3 gets them all right. In Italy only <strong>37%</strong> of adults have basic financial literacy (S&amp;P Global, 2014).</p>
+</section>
+
+<section>
+  <h2>What will change the pact</h2>
+  <table style="font-size:0.95em;margin-top:30px">
+    <tr><td><strong>Demography</strong></td><td style="white-space:nowrap"><strong>38 → 64</strong></td><td>people aged 65+ per 100 of working age, from 2024 to 2050</td></tr>
+    <tr><td><strong>Migration</strong></td><td style="white-space:nowrap"><strong>−0.6 points</strong></td><td>of GDP in spending in 2050, with a third more migrants</td></tr>
+    <tr><td><strong>Work</strong></td><td style="white-space:nowrap"><strong>70</strong></td><td>old-age retirement age in 2070</td></tr>
+    <tr><td><strong>Artificial intelligence</strong></td><td style="white-space:nowrap"><strong>60%</strong></td><td>of jobs exposed to AI in advanced economies</td></tr>
+  </table>
+  <div class="src">Sources: EC, 2024 Ageing Report; RGS Rapporto n. 27 (2026); IMF (2024), SDN/2024/001.</div>
+</section>
+
+<section>
+  <div class="menti" data-menti="cloud" hidden></div>
+  <h2>What would you put in the new pact between generations?</h2>
+  <div style="text-align:center"><input type="text" id="cloud-in" placeholder="Type a word and press Enter"> <button id="cloud-clear">Clear</button></div>
+  <div id="cloud"></div>
+</section>
+
+<section>
+  <h2>Take-home messages</h2>
+  <div class="menti" data-menti="after" hidden></div>
+  <ol style="font-size:1.08em">
+    <li>The public pension is a <strong>pact between generations</strong>: the young pay for the old.</li>
+    <li>It works well when there is <strong>growth and plenty of young people</strong>.</li>
+    <li>Today few children are born and we live longer: <strong>the pact must change</strong>.</li>
+    <li>You will have lower pensions relative to your pay: <strong>get informed and plan</strong>.</li>
+  </ol>
+</section>
+
+<section style="font-size:0.5em">
+  <h2 style="font-size:2em">Main sources</h2>
+  <div class="cols">
+    <div><ul>
+      <li>Samuelson, P. (1958), JPE.</li>
+      <li>Aaron, H. (1966), CJEPS.</li>
+      <li>Becker, G. and Murphy, K. (1988), JLE.</li>
+      <li>Boldrin, M. and Montes, A. (2005), RES.</li>
+      <li>Lancia, F. and Russo, A. (2016), JEEA: Public education and pensions in democracy: A political economy theory.</li>
+      <li>Lusardi, A. and Mitchell, O. (2014), JEL.</li>
+      <li>Romp, W. (2024), Netspar DP 07/2024-022.</li>
+    </ul></div>
+    <div><ul>
+      <li>RGS (2026), <a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/Attivit--i/Spesa-soci/Attivita_di_previsione_RGS/2026/Ltdmlpdspess-2026.pdf" target="_blank" rel="noopener">Rapporto n. 27</a>.</li>
+      <li>European Commission and EPC (2024), 2024 Ageing Report.</li>
+      <li>INPS (2026), XXV Rapporto Annuale.</li>
+      <li>COVIP (2025), Relazione per l'anno 2024.</li>
+      <li>United Nations (2024), World Population Prospects.</li>
+      <li>IMF (2024), SDN/2024/001.</li>
+    </ul></div>
+  </div>
+</section>
+
+</div></div>
+
+<script src="vendor/reveal.min.js"></script>
+<script src="vendor/reveal-notes.min.js"></script>
+<script src="vendor/chart.umd.min.js"></script>
+<script src="data/slide_data.js"></script>
+<script src="vendor/d3.min.js"></script>
+<script src="vendor/topojson.min.js"></script>
+<script src="data/world_110m.js"></script>
+<script src="data/reforms_data.js"></script>
+<script src="js/reform_viz.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
