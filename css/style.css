@@ -224,8 +224,8 @@
 .chain-ctrls .ctrl { flex: 1; }
 
 /* Short decks: footer tags to jump between sections */
-.sec-nav { position: fixed; left: 50%; transform: translateX(-50%); bottom: 7px; z-index: 30; display: flex; gap: 5px; white-space: nowrap; font-family: "Segoe UI", system-ui, sans-serif; }
-.sec-nav button { font: inherit; font-size: 12px; line-height: 1; padding: 3px 9px; color: var(--accent); background: #fff; border: 1px solid #cfd6e4; border-radius: 10px; cursor: pointer; }
-.sec-nav button:hover { border-color: var(--accent); }
-.sec-nav button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
-@media (max-width: 640px) { .sec-nav button { font-size: 10px; padding: 2px 5px; } .sec-nav { gap: 2px; } }
+.sec-nav { position: fixed; left: 50%; transform: translateX(-50%); bottom: 5px; z-index: 40; display: flex; gap: 5px; white-space: nowrap; font-family: "Segoe UI", system-ui, sans-serif; }
+.reveal .sec-nav button { margin: 0; font: inherit; font-size: 13px; font-weight: 600; line-height: 1; padding: 3px 10px; color: var(--accent); background: #fff; border: 1px solid #aeb9d2; border-radius: 10px; cursor: pointer; }
+.reveal .sec-nav button:hover { border-color: var(--accent); background: #eef2ff; }
+.reveal .sec-nav button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (max-width: 640px) { .reveal .sec-nav button { font-size: 10px; padding: 2px 5px; } .sec-nav { gap: 2px; } }
