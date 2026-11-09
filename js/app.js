@@ -721,6 +721,16 @@
     });
   }
 
+  // ------------------------------------------------------------- footer tags: jump between sections (short decks only)
+  function initSecNav() {
+    const nav = document.querySelector('.sec-nav');
+    if (!nav) return;
+    const slides = Reveal.getSlides(), tags = [...nav.querySelectorAll('button')].map(b => ({ b, i: slides.indexOf(document.getElementById(b.dataset.sec)) }));
+    const mark = () => { const h = Reveal.getState().indexh; let cur = tags[0]; tags.forEach(x => { if (x.i <= h) cur = x; }); tags.forEach(x => x.b.classList.toggle('on', x === cur)); };
+    tags.forEach(({ b, i }) => b.addEventListener('click', () => { Reveal.slide(i); b.blur(); }));
+    Reveal.on('slidechanged', mark); mark();
+  }
+
   // ------------------------------------------------------------- reveal rows
   function initRows() {
     document.querySelectorAll('.reveal-row').forEach(r => r.addEventListener('click', () => r.classList.toggle('shown')));
@@ -732,7 +742,7 @@
     // each init runs on its own, so a deck without some slides (index_it_short.html) still boots
     const safe = (f, name) => { try { return f(); } catch (e) { console.warn('skipped ' + name + ' (slide not in this deck?)', e); } };
     [[initPolls, 'polls'], [initTimelines, 'timelines'], [initChain, 'chain'], [() => initQuiz(document), 'quiz'], [initBigThree, 'bigthree'],
-      [initCloud, 'cloud'], [initRows, 'rows'], [initAlex, 'alex'], [initMenti, 'menti']].forEach(([f, n]) => safe(f, n));
+      [initCloud, 'cloud'], [initRows, 'rows'], [initAlex, 'alex'], [initMenti, 'menti'], [initSecNav, 'secnav']].forEach(([f, n]) => safe(f, n));
     const fillPersonas = safe(initPersonas, 'personas') || (() => {});
     const onShow = slide => {
       buildChartsIn(slide);

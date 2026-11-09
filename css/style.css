@@ -222,3 +222,10 @@
 .chain-big.chain-tfr .gen .p { width: 16px; height: 16px; }
 .chain-ctrls { display: flex; align-items: flex-end; gap: 40px; max-width: 1000px; margin: 14px auto 4px; }
 .chain-ctrls .ctrl { flex: 1; }
+
+/* Short decks: footer tags to jump between sections */
+.sec-nav { position: fixed; left: 50%; transform: translateX(-50%); bottom: 7px; z-index: 30; display: flex; gap: 5px; white-space: nowrap; font-family: "Segoe UI", system-ui, sans-serif; }
+.sec-nav button { font: inherit; font-size: 12px; line-height: 1; padding: 3px 9px; color: var(--accent); background: #fff; border: 1px solid #cfd6e4; border-radius: 10px; cursor: pointer; }
+.sec-nav button:hover { border-color: var(--accent); }
+.sec-nav button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (max-width: 640px) { .sec-nav button { font-size: 10px; padding: 2px 5px; } .sec-nav { gap: 2px; } }
